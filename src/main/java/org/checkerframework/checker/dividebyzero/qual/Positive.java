@@ -8,9 +8,9 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@DefaultQualifierInHierarchy
-@SubtypeOf({})
+@SubtypeOf({Top.class})
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
-public @interface Top { }
+public @interface Positive { }
