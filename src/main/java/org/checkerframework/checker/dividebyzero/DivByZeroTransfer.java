@@ -131,7 +131,7 @@ public class DivByZeroTransfer extends CFTransfer {
             case PLUS:
             case MINUS:
                 if (equal(lhs, reflect(Bottom.class)) || equal(rhs, reflect(Bottom.class))) {
-                    return bottom();
+                    return reflect(Bottom.class);
                 } else if (equal(lhs, reflect(Zero.class)) && equal(rhs, reflect(Zero.class))) {
                     return reflect(Zero.class);
                 } else if (equal(lhs, reflect(Zero.class)) && equal(rhs, reflect(NonZero.class))) {
@@ -143,7 +143,7 @@ public class DivByZeroTransfer extends CFTransfer {
                 }
             case TIMES:
                 if (equal(lhs, reflect(Bottom.class)) || equal(rhs, reflect(Bottom.class))) {
-                    return bottom();
+                    return reflect(Bottom.class);
                 } else if (equal(lhs, reflect(Zero.class)) || equal(rhs, reflect(Zero.class))) {
                     return reflect(Zero.class);
                 } else if (equal(lhs, reflect(NonZero.class)) && equal(rhs, reflect(NonZero.class))) {
@@ -155,7 +155,7 @@ public class DivByZeroTransfer extends CFTransfer {
             case MOD:
                 if (equal(lhs, reflect(Bottom.class)) || equal(rhs, reflect(Bottom.class))
                         || equal(rhs, reflect(Zero.class))) {
-                    return bottom();
+                    return reflect(Bottom.class);
                 } else if (equal(lhs, reflect(Zero.class)) && equal(rhs, reflect(NonZero.class))) {
                     return reflect(Zero.class);
                 } else if (equal(lhs, reflect(NonZero.class)) && equal(rhs, reflect(NonZero.class))) {
